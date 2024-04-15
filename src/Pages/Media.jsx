@@ -17,7 +17,9 @@ function Media() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.post("http://localhost:8000/getMedia");
+        const response = await axios.post(
+          "https://raah-test.onrender.com/getMedia"
+        );
         const data = await response.data;
         setImages(data.media.reverse() || []);
         console.log(data);
@@ -35,7 +37,7 @@ function Media() {
 
   for (let i = 0; i < getImages.length; i++) {
     images.push({
-      src: `http://localhost:8000/images/mediaPics/${getImages[i].mediaImage}`,
+      src: `https://raah-test.onrender.com/images/mediaPics/${getImages[i].mediaImage}`,
       description: getImages[i].mediaCaption,
       width: getImages[i].mediaWidth,
       height: getImages[i].mediaHeight,
@@ -54,14 +56,16 @@ function Media() {
         >
           {/* Your existing code */}
         </section>
-        <section style={{backgroundColor:"white"}} className="gallery-section-two p-5">
+        <section
+          style={{ backgroundColor: "white" }}
+          className="gallery-section-two p-5"
+        >
           <div className="auto-container">
             <div className="row">
               <div className="col-lg-12">
                 <PhotoAlbum
                   layout="rows"
                   photos={images}
-                  
                   targetRowHeight={150}
                   onClick={({ index: current }) => setIndex(current)}
                 />

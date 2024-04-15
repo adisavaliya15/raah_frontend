@@ -11,7 +11,7 @@ function FutureProjects() {
   const fetchData = async () => {
     try {
       const response = await axios.post(
-        "http://localhost:8000/getFutureStrategy"
+        "https://raah-test.onrender.com/getFutureStrategy"
       );
       const data = await response.data;
       setDatas(data.strategy || []);

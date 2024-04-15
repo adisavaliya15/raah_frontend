@@ -9,7 +9,9 @@ function FunFact() {
 
   const fetchData = async () => {
     try {
-      const response = await axios.post("http://localhost:8000/getUserCounts");
+      const response = await axios.post(
+        "https://raah-test.onrender.com/getUserCounts"
+      );
       const data = await response.data;
       setCounts(data.counts || []);
       console.log(data);

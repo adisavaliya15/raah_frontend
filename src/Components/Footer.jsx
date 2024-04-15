@@ -10,7 +10,7 @@ function Footer() {
   const fetchData = async () => {
     try {
       const response = await axios.post(
-        "http://localhost:8000/getContactDetail"
+        "https://raah-test.onrender.com/getContactDetail"
       );
       const data = await response.data;
       setContactUsData(data.contactDetail || []);

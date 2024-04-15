@@ -19,7 +19,7 @@ function Services() {
       behavior: "smooth",
     });
     axios
-      .post("http://localhost:8000/getService")
+      .post("https://raah-test.onrender.com/getService")
       .then((response) => {
         if (response.data && response.data.success) {
           setServices(response.data.services || []);
@@ -106,7 +106,7 @@ function Services() {
                             width: "100%",
                             objectFit: "cover",
                           }}
-                          src={`http://localhost:8000/images/servicePics/${service.servicePic}`}
+                          src={`https://raah-test.onrender.com/images/servicePics/${service.servicePic}`}
                           alt={service.servicePic}
                         />
                       </div>

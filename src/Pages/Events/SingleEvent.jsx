@@ -19,7 +19,7 @@ function SingleEvent() {
     const fetchEvents = async () => {
       try {
         const response = await axios.post(
-          `http://localhost:8000/getEventDetailById`,
+          `https://raah-test.onrender.com/getEventDetailById`,
           {
             reqId,
           }
@@ -140,8 +140,12 @@ function SingleEvent() {
                     <div className="col-lg-6">
                       <div className="image mb-30">
                         <img
-                          style={{ height: "350px", width: "550px", objectFit: "cover" }}
-                          src={`http://localhost:8000/images/eventPics/${event?.eventPic}`}
+                          style={{
+                            height: "350px",
+                            width: "550px",
+                            objectFit: "cover",
+                          }}
+                          src={`https://raah-test.onrender.com/images/eventPics/${event?.eventPic}`}
                           alt={event?.eventPic}
                         />
                       </div>

@@ -8,7 +8,9 @@ function TeamSection() {
 
   const fetchData = async () => {
     try {
-      const response = await axios.post("http://localhost:8000/getMembers");
+      const response = await axios.post(
+        "https://raah-test.onrender.com/getMembers"
+      );
       const data = await response.data;
       setAbout(data.members || []);
     } catch (error) {
@@ -62,7 +64,7 @@ function TeamSection() {
                   <div className="image">
                     <a href="/#">
                       <img
-                        src={`http://localhost:8000/images/memberPics/${member.memberPic}`}
+                        src={`https://raah-test.onrender.com/images/memberPics/${member.memberPic}`}
                         alt=""
                       />
                     </a>

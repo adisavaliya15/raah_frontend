@@ -14,7 +14,7 @@ function Events() {
 
   useEffect(() => {
     axios
-      .post("http://localhost:8000/getEvents")
+      .post("https://raah-test.onrender.com/getEvents")
       .then((response) => {
         if (response.data && response.data.success) {
           setEvents(response.data.events || []);
@@ -30,7 +30,6 @@ function Events() {
         setLoading(false);
       });
   }, []);
-
 
   // Get current products
   const indexOfLastProduct = currentPage * eventsPerPage;
@@ -74,12 +73,16 @@ function Events() {
                         className="event-block-one col-lg-4 col-md-6"
                         key={event._id}
                       >
-                        <div className="inner-box" style={{height: "450px"}}>
+                        <div className="inner-box" style={{ height: "450px" }}>
                           <div>
                             <div className="image">
                               <img
-                                style={{ width: "100%", height: "250PX", objectFit: "cover" }}
-                                src={`http://localhost:8000/images/eventPics/${event.eventPic}`}
+                                style={{
+                                  width: "100%",
+                                  height: "250PX",
+                                  objectFit: "cover",
+                                }}
+                                src={`https://raah-test.onrender.com/images/eventPics/${event.eventPic}`}
                                 alt=""
                               />
                             </div>

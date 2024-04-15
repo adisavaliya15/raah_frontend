@@ -12,7 +12,7 @@ function Feedback() {
   const fetchData = async () => {
     try {
       const response = await axios.post(
-        "http://localhost:8000/getContactDetail"
+        "https://raah-test.onrender.com/getContactDetail"
       );
       const data = await response.data;
       setContactData(data.contactDetail || []);
@@ -64,7 +64,10 @@ function Feedback() {
     console.log(feedbackData);
 
     try {
-      await axios.post("http://localhost:8000/addFeedback", feedbackData);
+      await axios.post(
+        "https://raah-test.onrender.com/addFeedback",
+        feedbackData
+      );
       toast.success("Feedback Added Succesfully!!", {
         autoClose: 1500,
       });

@@ -10,7 +10,9 @@ function AboutUs() {
 
   const fetchData = async () => {
     try {
-      const response = await axios.post("http://localhost:8000/getMembers");
+      const response = await axios.post(
+        "https://raah-test.onrender.com/getMembers"
+      );
       const data = await response.data;
       setAbout(data.members || []);
     } catch (error) {

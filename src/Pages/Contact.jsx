@@ -13,7 +13,7 @@ function Contact() {
   const fetchData = async () => {
     try {
       const response = await axios.post(
-        "http://localhost:8000/getContactDetail"
+        "https://raah-test.onrender.com/getContactDetail"
       );
       const data = await response.data;
       setContactData(data.contactDetail || []);
@@ -64,7 +64,10 @@ function Contact() {
     console.log(ContactUsData);
 
     try {
-      await axios.post("http://localhost:8000/addContactUs", ContactUsData);
+      await axios.post(
+        "https://raah-test.onrender.com/addContactUs",
+        ContactUsData
+      );
       toast.success("ContactUs Added Succesfully!!", {
         autoClose: 1500,
       });

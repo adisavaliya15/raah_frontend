@@ -14,7 +14,7 @@ function Events() {
 
   useEffect(() => {
     axios
-      .post("http://localhost:8000/getEvents")
+      .post("https://raah-test.onrender.com/getEvents")
       .then((response) => {
         if (response.data && response.data.success) {
           setEvents(response.data.events || []);
@@ -84,7 +84,6 @@ function Events() {
               ) : currentEvents.length > 0 ? (
                 currentEvents.map((event) => (
                   <div
-                    
                     className="event-block-one col-lg-4 col-md-6"
                     key={event._id}
                   >
@@ -92,8 +91,12 @@ function Events() {
                       <div>
                         <div className="image">
                           <img
-                            style={{ width: "100%", height: "250px", objectFit: "cover" }}
-                            src={`http://localhost:8000/images/eventPics/${event.eventPic}`}
+                            style={{
+                              width: "100%",
+                              height: "250px",
+                              objectFit: "cover",
+                            }}
+                            src={`https://raah-test.onrender.com/images/eventPics/${event.eventPic}`}
                             alt=""
                           />
                         </div>
